@@ -1,0 +1,13 @@
+module extInput()
+
+always @(*)
+ begin
+	2'b10: 
+	begin
+            saida = { {14{entrada_in[17]}}, entrada_in};
+   end
+		  
+  
+end
+
+endmodule

@@ -1,0 +1,23 @@
+module bancoRegistradores(clk, leitura1, leitura2, escrita, regWrite, dataWrite, RS, RT);
+
+input clk, regWrite;
+input [4:0] escrita, leitura1, leitura2; // endereços de leitura e escrita
+input [31:0] dataWrite;
+
+output [31:0] RS, RT;
+
+reg[31:0] registradores[31:0];
+
+assign RS = registradores[leitura1];
+assign RT = registradores[leitura2];
+
+always @ (posedge clk)
+begin
+	if(regWrite == 1)
+	begin
+		registradores[escrita] = dataWrite;
+	end
+end
+
+
+endmodule
