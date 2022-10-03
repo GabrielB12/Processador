@@ -1,11 +1,11 @@
-module CPU(CLOCK_50, SW, KEY, instAtual, posicaoMem, outULA, zero, RT, RD, RS, HEX0, HEX1, HEX2, HEX3, printa, data);
+module CPU(CLOCK_50, SW, KEY, instAtual, posicaoMem, outULA, zero, RT, RD, RS, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7, printa, data, entrada);
 
 wire clkSaida;
 output reg [31:0] instAtual, posicaoMem, outULA, RS, RT, RD;
 output reg [31:0] data;
-output reg [0:6] HEX0, HEX1, HEX2, HEX3;
+output reg [0:6] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7;
 output reg zero;
-output reg printa;
+output reg printa, entrada;
 
 //fios para interligar os componentes 
 wire [31:0] pcin;
@@ -113,6 +113,7 @@ always @ (*)
 begin
 	posicaoMem = endAtual;
 	printa = out;
+	entrada = inp;
 	outULA = saidaUla;
 	instAtual = inst;
 	zero = aluZero;
@@ -126,6 +127,10 @@ begin
 	{HEX1[0], HEX1[1], HEX1[2], HEX1[3], HEX1[4], HEX1[5], HEX1[6]} = {a2, b2, c2, d2, e2, f2, g2}; //pinagem do display de 7 segmentos da dezena
 	{HEX2[0], HEX2[1], HEX2[2], HEX2[3], HEX2[4], HEX2[5], HEX2[6]} = {a3, b3, c3, d3, e3, f3, g3}; //pinagem do display de 7 segmentos da centena
 	{HEX3[0], HEX3[1], HEX3[2], HEX3[3], HEX3[4], HEX3[5], HEX3[6]} = {a4, b4, c4, d4, e4, f4, g4}; //pinagem do display de 7 segmentos de milhar
+	{HEX4[0], HEX4[1], HEX4[2], HEX4[3], HEX4[4], HEX4[5], HEX4[6]} = {1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1};
+	{HEX5[0], HEX5[1], HEX5[2], HEX5[3], HEX5[4], HEX5[5], HEX5[6]} = {1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1};
+	{HEX6[0], HEX6[1], HEX6[2], HEX6[3], HEX6[4], HEX6[5], HEX6[6]} = {1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1};
+	{HEX7[0], HEX7[1], HEX7[2], HEX7[3], HEX7[4], HEX7[5], HEX7[6]} = {1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1};
 	
 end
 

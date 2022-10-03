@@ -1,13 +1,13 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off CPU -c CPU --vector_source="/media/gabriel/GABRIELB/processador-novo/Waveform58.vwf" --testbench_file="/media/gabriel/GABRIELB/processador-novo/simulation/qsim/Waveform58.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off CPU -c CPU --vector_source="/media/gabriel/GABRIELB/processador-novo/Waveform58.vwf" --testbench_file="/media/gabriel/GABRIELB/processador-novo/simulation/qsim/Waveform58.vwf.vt"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="/media/gabriel/GABRIELB/processador-novo/simulation/qsim/" CPU -c CPU</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="/media/gabriel/GABRIELB/processador-novo/simulation/qsim/" CPU -c CPU</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off CPU -c CPU --vector_source="/media/gabriel/GABRIELB/PROCESSADOR-GIT/Processador/Waveform58.vwf" --testbench_file="/media/gabriel/GABRIELB/PROCESSADOR-GIT/Processador/simulation/qsim/Waveform58.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off CPU -c CPU --vector_source="/media/gabriel/GABRIELB/PROCESSADOR-GIT/Processador/Waveform58.vwf" --testbench_file="/media/gabriel/GABRIELB/PROCESSADOR-GIT/Processador/simulation/qsim/Waveform58.vwf.vt"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="/media/gabriel/GABRIELB/PROCESSADOR-GIT/Processador/simulation/qsim/" CPU -c CPU</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="/media/gabriel/GABRIELB/PROCESSADOR-GIT/Processador/simulation/qsim/" CPU -c CPU</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vlog -work work CPU.vo
 vlog -work work Waveform58.vwf.vt
-vsim  -voptargs=+acc -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.CPU_vlg_vec_tst
+vsim -voptargs=+acc -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.CPU_vlg_vec_tst
 vcd file -direction CPU.msim.vcd
 vcd add -internal CPU_vlg_vec_tst/*
 vcd add -internal CPU_vlg_vec_tst/i1/*
@@ -27,7 +27,7 @@ quit -f
 vlib work
 vlog -work work CPU.vo
 vlog -work work Waveform58.vwf.vt
-vsim -voptargs=+acc -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.CPU_vlg_vec_tst
+vsim -voptargs=+acc-c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.CPU_vlg_vec_tst
 vcd file -direction CPU.msim.vcd
 vcd add -internal CPU_vlg_vec_tst/*
 vcd add -internal CPU_vlg_vec_tst/i1/*
@@ -52,7 +52,7 @@ the Block Editor! File corruption is VERY likely to occur.
 */
 
 /*
-Copyright (C) 2019  Intel Corporation. All rights reserved.
+Copyright (C) 2022  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -4432,14 +4432,14 @@ TRANSITION_LIST("CLOCK_50")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 3.0;
+		LEVEL 1 FOR 0.5;
 		NODE
 		{
-			REPEAT = 166;
-			LEVEL 0 FOR 3.0;
-			LEVEL 1 FOR 3.0;
+			REPEAT = 999;
+			LEVEL 0 FOR 0.5;
+			LEVEL 1 FOR 0.5;
 		}
-		LEVEL 0 FOR 1.0;
+		LEVEL 0 FOR 0.5;
 	}
 }
 

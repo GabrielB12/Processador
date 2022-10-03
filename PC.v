@@ -9,7 +9,7 @@ begin //para que pc começe em 0, onde estará a primeira instrução
 	pcout = 32'b0;
 end
 
-always@(posedge clk, posedge reset)
+always@(posedge clk)
 begin
 	if(reset == 1) // halt
 		pcout = pcout;

@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("F:/SOF's/") File("CPU-10.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("F:/PROCESSADOR-GIT/Processador/output_files/") File("CPU.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

@@ -1,5 +1,5 @@
 EDA Netlist Writer report for CPU
-Mon Sep 26 14:00:58 2022
+Mon Oct  3 14:34:24 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Sep 26 14:00:58 2022 ;
+; EDA Netlist Writer Status ; Successful - Mon Oct  3 14:34:24 2022 ;
 ; Revision Name             ; CPU                                   ;
 ; Top-level Entity Name     ; CPU                                   ;
 ; Family                    ; Cyclone IV E                          ;
@@ -66,13 +66,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------------------------+-----------------------------+
 
 
-+------------------------------------------------------------------+
-; Simulation Generated Files                                       ;
-+------------------------------------------------------------------+
-; Generated Files                                                  ;
-+------------------------------------------------------------------+
-; /media/gabriel/GABRIELB/processador-novo/simulation/qsim//CPU.vo ;
-+------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+; Simulation Generated Files                                                  ;
++-----------------------------------------------------------------------------+
+; Generated Files                                                             ;
++-----------------------------------------------------------------------------+
+; /media/gabriel/GABRIELB/PROCESSADOR-GIT/Processador/simulation/qsim//CPU.vo ;
++-----------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -95,14 +95,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Mon Sep 26 14:00:47 2022
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/media/gabriel/GABRIELB/processador-novo/simulation/qsim/ CPU -c CPU
+    Info: Processing started: Mon Oct  3 14:33:52 2022
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/media/gabriel/GABRIELB/PROCESSADOR-GIT/Processador/simulation/qsim/ CPU -c CPU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file CPU.vo in folder "/media/gabriel/GABRIELB/processador-novo/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file CPU.vo in folder "/media/gabriel/GABRIELB/PROCESSADOR-GIT/Processador/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 638 megabytes
-    Info: Processing ended: Mon Sep 26 14:01:05 2022
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 637 megabytes
+    Info: Processing ended: Mon Oct  3 14:34:31 2022
+    Info: Elapsed time: 00:00:39
+    Info: Total CPU time (on all processors): 00:00:03
 
 
