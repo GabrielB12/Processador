@@ -7,7 +7,7 @@ output reg [0:6] HEX0, HEX1, HEX2, HEX3;
 output reg zero;
 output reg printa;
 
-//fios para interligar os componentes
+//fios para interligar os componentes 
 wire [31:0] pcin;
 wire [31:0] endAtual;
 wire [31:0] endSomapc;
@@ -132,7 +132,7 @@ end
 endmodule
 
 
-/* ------------------------PARA TESTE NO FPGA REMOTO-------------------------------*/
+/* ---------------------------PARA TESTE NO FPGA REMOTO-------------------------------*/
 /*
 module CPU(SW, HEX0, HEX1, HEX2, HEX3);
 
