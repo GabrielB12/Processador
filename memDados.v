@@ -1,10 +1,10 @@
-module memDados(clk, dados, memWrite, memRead, saidaDados, posicao, flagPC, saidaPC, endAtual);
+module memDados(clk, dados, memWrite, memRead, saidaDados, posicao, posAtual, saidaPC, endAtual);
 
 input clk, memWrite, memRead;
 input [31:0] posicao;
 input [31:0] dados;
 input [31:0] endAtual;
-input wire flagPC; // saber se o programa acabou
+input wire posAtual; // saber se o programa acabou
 
 output [31:0] saidaDados;
 output wire [31:0] saidaPC;
