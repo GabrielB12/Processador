@@ -1,0 +1,137 @@
+void main(void)
+{
+    int endAtual;
+    int PC[3];
+    int TEMP_REG[32];
+    int regVet[100];
+
+    int comeco;
+    int preem;
+    preem = 0;
+    int progAtual;
+    int finalizados[3];
+    int auxFim;
+
+    int quantum;
+
+    int i;
+    int indexVet;
+    int posData;
+    int qnt;
+    int vetPROG[3];
+
+    int posProgramas[3];
+    posProgramas[0] = 1774;
+    posProgramas[1] = 1880;
+    posProgramas[2] = 1929;
+
+    save_reg();
+
+    if (preem == 0)
+    {
+        int confirma;
+        confirma = input();
+
+        if (confirma == 3)
+        {
+            comeco = 1;
+
+            auxFim = 0;
+            finalizados[0] = 0;
+            finalizados[1] = 0;
+            finalizados[2] = 0;
+
+            endAtual = 0;
+            PC[0] = 0;
+            PC[1] = 0;
+            PC[2] = 0;
+
+            quantum = 8;
+
+            preem = input();
+
+            qnt = input();
+
+            while (qnt > 0)
+            {
+                int index;
+                index = 0;
+                vetPROG[index] = input();
+                index = index + 1;
+                qnt = qnt - 1;
+            }
+
+            progAtual = vetPROG[0];
+            progAtual = progAtual - 1;
+        }
+    }
+
+    if (preem == 0)
+    {
+        set_pc(posProgramas[progAtual]);
+    }
+
+    else if (preem == 1)
+    {
+        if (comeco == 1)
+        {
+            comeco = 0;
+            set_preempt(quantum);
+            set_pc(posProgramas[progAtual]);
+        }
+        else // comeco == 0, então já fez uma vez
+        {
+            endAtual = get_pc();
+
+            if (endAtual == 0)
+            {
+                auxFim = auxFim + 1;
+                finalizados[progAtual] = 1;
+            }
+            else
+            {
+                PC[progAtual] = endAtual + 1;
+                i = 0;
+                posData = progAtual * 32;
+                while (i < 32)
+                {
+                    regVet[i + posData] = TEMP_REG[i];
+                    TEMP_REG[i] = 0;
+                    i = i + 1;
+                }
+            }
+
+            progAtual = progAtual + 1;
+
+            if (progAtual == 3)
+            {
+                progAtual = 0;
+            }
+
+            if (auxFim == 3)
+            {
+                preem = 0;
+                set_preempt(0);
+                set_pc(0);
+            }
+            else
+            {
+                while (finalizados[progAtual] == 1)
+                {
+                    progAtual = progAtual + 1;
+                }
+                if (PC[progAtual] != 0)
+                {
+                    posData = PC[progAtual];
+                    indexVet = 32 * progAtual;
+                    load_reg(regVet[indexVet]);
+                    set_pc(posData);
+                }
+                else
+                {
+                    set_pc(posProgramas[progAtual]);
+                }
+            }
+        }
+    }
+}

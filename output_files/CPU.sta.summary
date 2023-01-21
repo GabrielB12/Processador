@@ -3,44 +3,32 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'divClk:comb_3|saidaClk'
-Slack : -36.017
-TNS   : -60102.648
-
-Type  : Slow 1200mV 85C Model Setup 'PC:comb_4|pcout[2]'
-Slack : -24.692
-TNS   : -1037.292
+Slack : -33.721
+TNS   : -52443.974
 
 Type  : Slow 1200mV 85C Model Setup 'KEY[3]'
-Slack : -17.691
-TNS   : -474.624
+Slack : -16.590
+TNS   : -489.645
 
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : -9.030
-TNS   : -9.030
-
-Type  : Slow 1200mV 85C Model Hold 'PC:comb_4|pcout[2]'
-Slack : -21.405
-TNS   : -652.725
+Slack : -5.557
+TNS   : -5.557
 
 Type  : Slow 1200mV 85C Model Hold 'KEY[3]'
-Slack : -15.539
-TNS   : -463.397
+Slack : -14.403
+TNS   : -419.678
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
-Slack : -3.591
-TNS   : -3.591
+Slack : -3.782
+TNS   : -3.782
 
 Type  : Slow 1200mV 85C Model Hold 'divClk:comb_3|saidaClk'
-Slack : -3.286
-TNS   : -72.013
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PC:comb_4|pcout[2]'
-Slack : -16.542
-TNS   : -9819.266
+Slack : 0.427
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'KEY[3]'
-Slack : -3.424
-TNS   : -947.152
+Slack : -3.902
+TNS   : -1126.752
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
@@ -48,47 +36,35 @@ TNS   : -4.285
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'divClk:comb_3|saidaClk'
 Slack : -1.285
-TNS   : -2834.710
+TNS   : -2857.840
 
 Type  : Slow 1200mV 0C Model Setup 'divClk:comb_3|saidaClk'
-Slack : -33.051
-TNS   : -54905.953
-
-Type  : Slow 1200mV 0C Model Setup 'PC:comb_4|pcout[2]'
-Slack : -22.666
-TNS   : -966.512
+Slack : -30.806
+TNS   : -47244.938
 
 Type  : Slow 1200mV 0C Model Setup 'KEY[3]'
-Slack : -16.262
-TNS   : -452.150
+Slack : -15.689
+TNS   : -462.500
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -8.209
-TNS   : -8.209
-
-Type  : Slow 1200mV 0C Model Hold 'PC:comb_4|pcout[2]'
-Slack : -19.492
-TNS   : -597.001
+Slack : -4.930
+TNS   : -4.930
 
 Type  : Slow 1200mV 0C Model Hold 'KEY[3]'
-Slack : -13.961
-TNS   : -420.971
+Slack : -13.098
+TNS   : -382.047
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
-Slack : -3.295
-TNS   : -3.295
+Slack : -3.458
+TNS   : -3.458
 
 Type  : Slow 1200mV 0C Model Hold 'divClk:comb_3|saidaClk'
-Slack : -2.986
-TNS   : -63.383
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PC:comb_4|pcout[2]'
-Slack : -15.499
-TNS   : -8892.788
+Slack : 0.393
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'KEY[3]'
-Slack : -3.645
-TNS   : -868.071
+Slack : -3.867
+TNS   : -1028.471
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
@@ -96,47 +72,35 @@ TNS   : -4.285
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'divClk:comb_3|saidaClk'
 Slack : -1.285
-TNS   : -2834.710
+TNS   : -2857.840
 
 Type  : Fast 1200mV 0C Model Setup 'divClk:comb_3|saidaClk'
-Slack : -18.301
-TNS   : -30018.911
-
-Type  : Fast 1200mV 0C Model Setup 'PC:comb_4|pcout[2]'
-Slack : -12.513
-TNS   : -512.651
+Slack : -18.066
+TNS   : -27828.486
 
 Type  : Fast 1200mV 0C Model Setup 'KEY[3]'
-Slack : -8.824
-TNS   : -224.611
+Slack : -8.102
+TNS   : -237.328
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -4.219
-TNS   : -4.219
-
-Type  : Fast 1200mV 0C Model Hold 'PC:comb_4|pcout[2]'
-Slack : -11.307
-TNS   : -351.574
+Slack : -2.208
+TNS   : -2.208
 
 Type  : Fast 1200mV 0C Model Hold 'KEY[3]'
-Slack : -8.646
-TNS   : -261.044
+Slack : -7.659
+TNS   : -224.842
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
-Slack : -1.973
-TNS   : -1.973
+Slack : -2.075
+TNS   : -2.075
 
 Type  : Fast 1200mV 0C Model Hold 'divClk:comb_3|saidaClk'
-Slack : -1.693
-TNS   : -48.732
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PC:comb_4|pcout[2]'
-Slack : -8.468
-TNS   : -4677.833
+Slack : 0.011
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'KEY[3]'
 Slack : -3.000
-TNS   : -393.687
+TNS   : -497.500
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
@@ -144,6 +108,6 @@ TNS   : -4.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'divClk:comb_3|saidaClk'
 Slack : -1.000
-TNS   : -2206.000
+TNS   : -2224.000
 
 ------------------------------------------------------------

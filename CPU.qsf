@@ -67,7 +67,6 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VERILOG_FILE deslocador2.v
 set_global_assignment -name BDF_FILE esquematico.bdf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform58.vwf
 set_location_assignment PIN_G18 -to HEX0[0]
 set_location_assignment PIN_F22 -to HEX0[1]
 set_location_assignment PIN_E17 -to HEX0[2]
@@ -116,7 +115,6 @@ set_global_assignment -name VERILOG_FILE input_.v
 set_global_assignment -name VERILOG_FILE divClk.v
 set_global_assignment -name VERILOG_FILE extInput.v
 set_location_assignment PIN_Y2 -to CLOCK_50
-set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/qsim/CPU_20220925194230.sim.vwf
 set_location_assignment PIN_R24 -to KEY[3]
 set_location_assignment PIN_N21 -to KEY[2]
 set_location_assignment PIN_M21 -to KEY[1]
@@ -138,4 +136,5 @@ set_location_assignment PIN_AD27 -to SW[3]
 set_location_assignment PIN_AC27 -to SW[2]
 set_location_assignment PIN_AC28 -to SW[1]
 set_location_assignment PIN_AB28 -to SW[0]
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

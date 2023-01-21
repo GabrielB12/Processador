@@ -1,5 +1,5 @@
 Flow report for CPU
-Mon Oct  3 16:34:38 2022
+Fri Oct 21 14:08:04 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -41,17 +41,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Oct  3 16:33:56 2022       ;
+; Flow Status                        ; Successful - Fri Oct 21 14:08:04 2022       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; CPU                                         ;
 ; Top-level Entity Name              ; CPU                                         ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 3,477 / 114,480 ( 3 % )                     ;
-;     Total combinational functions  ; 2,485 / 114,480 ( 2 % )                     ;
-;     Dedicated logic registers      ; 2,207 / 114,480 ( 2 % )                     ;
-; Total registers                    ; 2207                                        ;
+; Total logic elements               ; 3,383 / 114,480 ( 3 % )                     ;
+;     Total combinational functions  ; 2,421 / 114,480 ( 2 % )                     ;
+;     Dedicated logic registers      ; 2,225 / 114,480 ( 2 % )                     ;
+; Total registers                    ; 2225                                        ;
 ; Total pins                         ; 306 / 529 ( 58 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/03/2022 16:31:50 ;
+; Start date & time ; 10/21/2022 14:02:29 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; CPU                 ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------+----------------------------------------+--------------------+-------------+------------+
 ; Assignment Name                            ; Value                                  ; Default Value      ; Entity Name ; Section Id ;
 +--------------------------------------------+----------------------------------------+--------------------+-------------+------------+
-; COMPILER_SIGNATURE_ID                      ; 167690720999921.166482551000525        ; --                 ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                      ; 167690720999921.166637174915790        ; --                 ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP                     ; 85                                     ; --                 ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP                     ; 0                                      ; --                 ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE                ; 1.2V                                   ; --                 ; --          ; --         ;
@@ -102,11 +102,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:40     ; 1.0                     ; 443 MB              ; 00:00:30                           ;
-; Fitter               ; 00:00:35     ; 1.0                     ; 999 MB              ; 00:00:35                           ;
-; Assembler            ; 00:00:21     ; 1.0                     ; 381 MB              ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:38     ; 1.1                     ; 618 MB              ; 00:00:12                           ;
-; Total                ; 00:02:14     ; --                      ; --                  ; 00:01:21                           ;
+; Analysis & Synthesis ; 00:01:04     ; 1.0                     ; 444 MB              ; 00:00:34                           ;
+; Fitter               ; 00:00:46     ; 1.0                     ; 1001 MB             ; 00:00:33                           ;
+; Assembler            ; 00:00:24     ; 1.0                     ; 378 MB              ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:50     ; 1.0                     ; 616 MB              ; 00:00:10                           ;
+; EDA Netlist Writer   ; 00:00:07     ; 1.0                     ; 622 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:22     ; 1.0                     ; 631 MB              ; 00:00:02                           ;
+; Total                ; 00:03:33     ; --                      ; --                  ; 00:01:24                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -119,6 +121,8 @@ https://fpgasoftware.intel.com/eula.
 ; Fitter               ; gabriel-linux    ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
 ; Assembler            ; gabriel-linux    ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
 ; Timing Analyzer      ; gabriel-linux    ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; gabriel-linux    ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; gabriel-linux    ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
 +----------------------+------------------+----------------+------------+----------------+
 
 
@@ -129,6 +133,8 @@ quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
 quartus_fit --read_settings_files=off --write_settings_files=off CPU -c CPU
 quartus_asm --read_settings_files=off --write_settings_files=off CPU -c CPU
 quartus_sta CPU -c CPU
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off CPU -c CPU --vector_source=/media/gabriel/GABRIELB/PROCESSADOR-GIT/Processador/Waveform.vwf --testbench_file=/media/gabriel/GABRIELB/PROCESSADOR-GIT/Processador/simulation/qsim/Waveform.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/media/gabriel/GABRIELB/PROCESSADOR-GIT/Processador/simulation/qsim/ CPU -c CPU
 
 
 

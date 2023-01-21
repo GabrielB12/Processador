@@ -1,0 +1,16 @@
+void main(void)
+{
+    int n;
+    n = 20;
+    int fib;
+    fib = 0;
+    int aux;
+    aux = 0;
+    while(fib < n)
+    {
+        fib = fib + aux;
+        aux = n;
+        n = fib;
+    }
+    output(fib);
+}
