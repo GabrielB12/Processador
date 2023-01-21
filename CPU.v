@@ -51,6 +51,7 @@ wire lcd;
 wire usaQuantum;
 
 wire haltIn;
+wire final;
 
 //Para o sete-segmentos
 wire a, b, c, d, e, f, g; //fios que conectarao no 7 segmentos
@@ -77,7 +78,7 @@ wire aluZero;
 divClk divClk(CLOCK_50, haltIn, clkSaida);
 
 //interligando os componentes
-PC PC(clkSaida, pcin, endAtual, reset, condicional, qtm, flagQtm);
+PC PC(clkSaida, pcin, endAtual, reset, condicional, qtm, flagQtm, final);
 
 somador somaPC(endAtual, 32'd1, endSomapc); //pc + 1
 
@@ -114,7 +115,7 @@ bcd novoBCD2 (.W(dez[3]), .X(dez[2]), .Y(dez[1]), .Z(dez[0]),  .a(a2), .b(b2), .
 bcd novoBCD3 (.W(cent[3]), .X(cent[2]), .Y(cent[1]), .Z(cent[0]),  .a(a3), .b(b3), .c(c3), .d(d3), .e(e3), .f(f3), .g(g3));
 bcd novoBCD4 (.W(mil[3]), .X(mil[2]), .Y(mil[1]), .Z(mil[0]),  .a(a4), .b(b4), .c(c4), .d(d4), .e(e4), .f(f4), .g(g4));
 
-memDados memDados(clkSaida, regRT, memWrite, memRead, saidaDados, saidaUla, endSomapc, saidaPC, endAtual);
+memDados memDados(clkSaida, regRT, memWrite, memRead, saidaDados, saidaUla, endSomapc, saidaPC, endAtual, final);
 
 unidadeControle unidadeControle(inst[31:27], reset, condicional, aluCtrl, escolhaReg, origemEscrita, imediato, memWrite, memRead, regWrite, comp, out, inp, escolheExt, lcd, usaQuantum);
 

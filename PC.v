@@ -1,10 +1,11 @@
-module PC (clk, pcin, pcout, reset, condicional, qtm, flagQtm);
+module PC (clk, pcin, pcout, reset, condicional, qtm, flagQtm, final);
 
 input clk, reset, flagQtm;
 input [2:0] condicional; //01 é de jump
 input [31:0] qtm;
 input [31:0] pcin;
 output reg [31:0] pcout;
+output reg final;
 
 reg [31:0] qAtual;
 reg [31:0] limiteQ;
@@ -14,6 +15,7 @@ begin //para que pc começe em 0, onde estará a primeira instrução
 	pcout = 32'b0;
 	qAtual = 32'b0;
 	limiteQ = 32'b0;
+	final = 0;
 end
 
 always @(posedge clock)
@@ -31,10 +33,12 @@ begin
 		pcout = pcout;
 		qAtual = 32'b0;
 		limiteQ = 32'b0;
+		final = 1;
 	end
 
 	else if(qAtual > limiteQ) // estouro de Quantum
 	begin
+		final = 0;
 		qAtual = 32'b0; // zera o quantum
 		pcout = 32'b0; // volta pra posição 0, ou seja, pro SO
 	end
@@ -43,10 +47,12 @@ begin
 	begin
 		if (pcout >= 616) // não é SO
 		begin
+			final = 0;
             qAtual <= qAtual + 1; // incrementa o quantum
         end
 		else
 		begin
+			final = 0;
             qAtual <= 32'b0; // se tá no SO não aumenta o quantum
         end
 	end
@@ -55,10 +61,12 @@ begin
 	begin
 		if (pcout >= 616) // não é SO
 		begin
+			final = 1;
             qAtual <= qAtual + 1; // incrementa o quantum
         end
 		else
 		begin
+			final = 1;
             qAtual <= 32'b0; // se tá no SO não aumenta o quantum
         end
 	end
