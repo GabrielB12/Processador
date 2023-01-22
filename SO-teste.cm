@@ -68,7 +68,7 @@ void leReg(int pos[], int index)
     load(29, 0);
     load(30, 0);
     load(31, 0);
-    // usando o vetor
+    // usando o vetor, e incrementando de 1 em 1, para pegar as 32 posições
     load(0, pos[index]);
     index = index + 1;
     load(1, pos[index]);
@@ -230,7 +230,7 @@ void main(void)
         }
         else // comeco == 0, então já fez uma vez
         {
-            endAtual = retornaEnd_pc();
+            endAtual = retornaEnd_pc(); // só retorna 0 se tiver acabado
 
             if (endAtual == 0) // acabou programa
             {
@@ -243,7 +243,7 @@ void main(void)
             {
                 escreveLCD(); // trocando Ctx
                 limpaLCD();
-                PC[progAtual] = endAtual + 1;
+                PC[progAtual] = endAtual + 1; // salva o PC do programa atual, para voltar
                 i = 0;
                 posData = progAtual * 32; // onde no vetor de registradores - [0:31] ou [32:63] (...)
                 while (i < 32)            // guarda o valor dos 32 registradores
@@ -258,7 +258,7 @@ void main(void)
             escreveLCD();              // Programa X
             limpaLCD();
             if (progAtual == 3)
-            { // para voltar para algum anterior que não tenha acabado
+            { // para voltar para algum anterior que não tenha acabado, fila circular, round-robin
                 progAtual = 0;
             }
 

@@ -22,7 +22,7 @@ always @(posedge clock)
 begin
     if (flagQtm == 1) // se haverá uso do quantum
 	begin
-        limiteQ <= qtm;
+        limiteQ = qtm;
     end
 end
 
@@ -33,7 +33,7 @@ begin
 		pcout = pcout;
 		qAtual = 32'b0;
 		limiteQ = 32'b0;
-		final = 1;
+		final = 1; // manda quando o programa acaba
 	end
 
 	else if(qAtual > limiteQ) // estouro de Quantum
@@ -43,31 +43,18 @@ begin
 		pcout = 32'b0; // volta pra posição 0, ou seja, pro SO
 	end
 
+	// tratando o jump
 	else if(condicional == 2'b01)
 	begin
 		if (pcout >= 687) // não é SO
 		begin
 			final = 0;
-            qAtual <= qAtual + 1; // incrementa o quantum
+            qAtual = qAtual + 1; // incrementa o quantum
         end
 		else
 		begin
 			final = 0;
-            qAtual <= 32'b0; // se tá no SO não aumenta o quantum
-        end
-	end
-
-	else if(condicional != 2'b01)
-	begin
-		if (pcout >= 687) // não é SO
-		begin
-			final = 1;
-            qAtual <= qAtual + 1; // incrementa o quantum
-        end
-		else
-		begin
-			final = 1;
-            qAtual <= 32'b0; // se tá no SO não aumenta o quantum
+            qAtual = 32'b0; // se tá no SO não aumenta o quantum
         end
 	end
 

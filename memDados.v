@@ -15,11 +15,11 @@ reg[31:0] auxPC;
 always @(posedge clock) begin
     if (posAtual > 687) // fora do SO
 	begin
-        auxPC <= endAtual; //salva o valor atual do PC
+        auxPC = endAtual; //salva o valor atual do PC
     end
 	if (final) // final do programa
 	begin
-		auxPC <= endAtual; //salva o valor atual do PC
+		auxPC = endAtual; //salva o valor atual do PC
 	end
 end
 
