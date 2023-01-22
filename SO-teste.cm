@@ -137,7 +137,7 @@ void leReg(int pos[], int index)
 void main(void)
 {
     int endAtual;
-    int PC[3]; // end de cada programa
+    int PC[3]; // end de cada programa, para verificar se é != 0
     int aux_regVet[32]; // vetor auxiliar
     int regVet[100]; // vetor para armazenar todos os possíveis estados de registradores na troca de contexto
 
@@ -159,13 +159,13 @@ void main(void)
 
     // serve para informar a posição de cada programa para os saltos
     int posProgramas[3];
-    posProgramas[0] = 617;
-    posProgramas[1] = 723;
-    posProgramas[2] = 771;
+    posProgramas[0] = 688;
+    posProgramas[1] = 794;
+    posProgramas[2] = 841;
 
-    guardaReg(); // Salva os registradores no endereço 10-19 e 25-31
+    guardaReg(); // Salva os registradores em aux_regVet[]
 
-    if (preem == 0) // só entra na primeira vez rodando o so
+    if (preem == 0)
     {
         escreveLCD(); // Bianchi CPU/SO - 3p/ ir
         limpaLCD();
@@ -174,7 +174,7 @@ void main(void)
 
         if (confirma == 3) // para teste(sem isso não funciona)
         {
-            comeco = 1;
+            comeco = 1; // verificar se passou pelo programa
 
             auxFim = 0;
             finalizados[0] = 0;
@@ -249,7 +249,7 @@ void main(void)
                 while (i < 32)            // guarda o valor dos 32 registradores
                 {
                     regVet[i + posData] = aux_regVet[i];
-                    aux_regVet[i] = 0;
+                    aux_regVet[i] = 0; // zera
                     i = i + 1;
                 }
             }
@@ -257,7 +257,7 @@ void main(void)
             progAtual = progAtual + 1; // avança o programa
             escreveLCD();              // Programa X
             limpaLCD();
-            if (progAtual == 3)
+            if (progAtual > 3)
             { // para voltar para algum anterior que não tenha acabado, fila circular, round-robin
                 progAtual = 0;
             }
@@ -280,8 +280,8 @@ void main(void)
                 {
                     posData = PC[progAtual];   // local para o salto do PC
                     indexVet = 32 * progAtual; // de onde ler os registradores
-                    leReg(regVet[indexVet], indexVet); 
-                    jumpPC(posData);
+                    leReg(regVet[indexVet], indexVet); // le os valores nos registradores guarddos antes de trocar contexto
+                    jumpPC(posData); // volta para onde o programa parou
                 }
                 else
                 {
