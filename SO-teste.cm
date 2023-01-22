@@ -138,10 +138,9 @@ void leReg(int pos)
 void main(void)
 {
     int endAtual;
-    int PC[3];
+    int PC[3]; // end de cada programa
     int aux_regVet[32]; // vetor auxiliar
-    // vetor para armazenar todos os possíveis estados de registradores na troca de contexto
-    int regVet[100];
+    int regVet[100]; // vetor para armazenar todos os possíveis estados de registradores na troca de contexto
 
     // variaveis auxiliares
     int comeco;
