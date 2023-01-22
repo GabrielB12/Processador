@@ -143,20 +143,20 @@ void main(void)
     int regVet[100]; // vetor para armazenar todos os possíveis estados de registradores na troca de contexto
 
     // variaveis auxiliares
-    int comeco;
-    int preem;
-    preem = 0;
-    int progAtual;
-    int finalizados[3];
-    int auxFim;
+    int comeco; // verificar se é a promeira vez rodando o programa
+    int preem; // se tem preempção
+    preem = 0; // começa com 0 para entrar no primeiro laço
+    int progAtual; // indice do programa atual
+    int finalizados[3]; // vetor para saber se o programa i acabou
+    int auxFim; // quantos já acabaram
 
     int quantum;
 
     int i;
-    int indexVet;
-    int posData;
-    int qnt;
-    int vetPROG[3];
+    int indexVet; // auxiliar indice do vetor
+    int posData; // recebe valor do PC
+    int qnt; // quantos programas
+    int vetPROG[3]; // armazena programas inseridos pelo usuário
 
     // serve para informar a posição de cada programa para os saltos
     int posProgramas[3];
@@ -223,7 +223,7 @@ void main(void)
 
     else if (preem == 1) // com preempção
     {
-        if (comeco == 1)
+        if (comeco == 1) // primeira vez no programa
         {
             comeco = 0;                      // já troca o valor
             ligaQnt(quantum);                // manda o quantum começar
@@ -233,7 +233,7 @@ void main(void)
         {
             endAtual = retornaEnd_pc();
 
-            if (endAtual == 0)
+            if (endAtual == 0) // acabou programa
             {
                 auxFim = auxFim + 1; // adiciona 1 na variavel de programas finalizados
                 finalizados[progAtual] = 1;
@@ -286,7 +286,7 @@ void main(void)
                 }
                 else
                 {
-                    jumpPC(posProgramas[progAtual]);
+                    jumpPC(posProgramas[progAtual]); // se não passou só da o jump
                 }
             }
         }
