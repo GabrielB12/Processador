@@ -60,7 +60,6 @@ wire a3, b3, c3, d3, e3, f3, g3; //fios que conectarao no 7 segmentos
 wire a4, b4, c4, d4, e4, f4, g4; //fios que conectarao no 7 segmentos
 wire [3:0] mil, cent, dez, uni;
 
-
 // beq, bneq, slt e sgt
 wire [2:0] comp;
 

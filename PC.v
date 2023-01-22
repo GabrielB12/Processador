@@ -45,7 +45,7 @@ begin
 
 	else if(condicional == 2'b01)
 	begin
-		if (pcout >= 616) // não é SO
+		if (pcout >= 687) // não é SO
 		begin
 			final = 0;
             qAtual <= qAtual + 1; // incrementa o quantum
@@ -59,7 +59,7 @@ begin
 
 	else if(condicional != 2'b01)
 	begin
-		if (pcout >= 616) // não é SO
+		if (pcout >= 687) // não é SO
 		begin
 			final = 1;
             qAtual <= qAtual + 1; // incrementa o quantum

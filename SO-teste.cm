@@ -37,44 +37,109 @@ void guardaReg(void)
 void leReg(int pos)
 {
     // registradores que são usados nos programas
-    load(0, 4);
-    load(1, 5);
-    load(2, 6);
-    load(3, 7);
-    load(4, 8);
-    load(5, 9);
-    load(6, 10);
-    load(7, 11);
-    load(8, 12);
-    load(9, 13);
-    load(10, 14);
-    load(11, 15);
-    load(13, 16);
-    load(14, 17);
-    load(15, 18);
-    load(16, 19);
-    load(17, 20);
-    load(18, 21);
-    load(19, 22);
-    load(20, 23);
-    load(21, 24);
-    load(22, 25);
-    load(23, 26);
-    load(24, 27);
-    load(25, 28);
-    load(26, 29);
-    load(27, 30);
-    load(28, 31);
-    load(29, 32);
-    load(30, 33);
-    load(31, 34);
+    load(0, 0);
+    load(1, 0);
+    load(2, 0);
+    load(3, 0);
+    load(4, 0);
+    load(5, 0);
+    load(6, 0);
+    load(7, 0);
+    load(8, 0);
+    load(9, 0);
+    load(10, 0);
+    load(11, 0);
+    load(13, 0);
+    load(14, 0);
+    load(15, 0);
+    load(16, 0);
+    load(17, 0);
+    load(18, 0);
+    load(19, 0);
+    load(20, 0);
+    load(21, 0);
+    load(22, 0);
+    load(23, 0);
+    load(24, 0);
+    load(25, 0);
+    load(26, 0);
+    load(27, 0);
+    load(28, 0);
+    load(29, 0);
+    load(30, 0);
+    load(31, 0);
+    // usando o vetor
+    load(0, pos);
+    pos = pos + 1;
+    load(1, pos);
+    pos = pos + 1;
+    load(2, pos);
+    pos = pos + 1;
+    load(3, pos);
+    pos = pos + 1;
+    load(4, pos);
+    pos = pos + 1;
+    load(5, pos);
+    pos = pos + 1;
+    load(6, pos);
+    pos = pos + 1;
+    load(7, pos);
+    pos = pos + 1;
+    load(8, pos);
+    pos = pos + 1;
+    load(9, pos);
+    pos = pos + 1;
+    load(10, pos);
+    pos = pos + 1;
+    load(11, pos);
+    pos = pos + 1;
+    load(12, pos);
+    pos = pos + 1;
+    load(13, pos);
+    pos = pos + 1;
+    load(14, pos);
+    pos = pos + 1;
+    load(15, pos);
+    pos = pos + 1;
+    load(16, pos);
+    pos = pos + 1;
+    load(17, pos);
+    pos = pos + 1;
+    load(18, pos);
+    pos = pos + 1;
+    load(19, pos);
+    pos = pos + 1;
+    load(20, pos);
+    pos = pos + 1;
+    load(21, pos);
+    pos = pos + 1;
+    load(22, pos);
+    pos = pos + 1;
+    load(23, pos);
+    pos = pos + 1;
+    load(24, pos);
+    pos = pos + 1;
+    load(25, pos);
+    pos = pos + 1;
+    load(26, pos);
+    pos = pos + 1;
+    load(27, pos);
+    pos = pos + 1;
+    load(28, pos);
+    pos = pos + 1;
+    load(29, pos);
+    pos = pos + 1;
+    load(30, pos);
+    pos = pos + 1;
+    load(31, pos);
+    pos = pos + 1;
 }
 
 void main(void)
 {
     int endAtual;
     int PC[3];
-    int TEMP_REG[32];
+    int aux_regVet[32]; // vetor auxiliar
     // vetor para armazenar todos os possíveis estados de registradores na troca de contexto
     int regVet[100];
 
@@ -185,8 +250,8 @@ void main(void)
                 posData = progAtual * 32; // onde no vetor de registradores - [0:31] ou [32:63] (...)
                 while (i < 32)            // guarda o valor dos 32 registradores
                 {
-                    regVet[i + posData] = TEMP_REG[i];
-                    TEMP_REG[i] = 0;
+                    regVet[i + posData] = aux_regVet[i];
+                    aux_regVet[i] = 0;
                     i = i + 1;
                 }
             }
@@ -217,7 +282,7 @@ void main(void)
                 {
                     posData = PC[progAtual];   // local para o salto do PC
                     indexVet = 32 * progAtual; // de onde ler os registradores
-                    leReg(regVet[indexVet]);
+                    leReg(regVet[indexVet]); 
                     jumpPC(posData);
                 }
                 else
