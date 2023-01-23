@@ -262,7 +262,7 @@ void main(void)
                 progAtual = 0;
             }
 
-            if (auxFim == qnt - 1) // todos acabaram
+            if (auxFim == qnt) // todos acabaram
             {
                 escreveLCD(); // FIM
                 preem = 0;
